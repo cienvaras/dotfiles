@@ -1,0 +1,58 @@
+{
+    "editor.fontSize": 13,
+    "editor.fontFamily": "Fira Code",
+    "editor.tabSize": 2,
+    "editor.cursorStyle": "line",
+    "editor.renderWhitespace": "boundary",
+    "files.insertFinalNewline": true,
+    "window.zoomLevel": 0,
+    "editor.dragAndDrop": true,
+    "editor.minimap.enabled": false,
+    "editor.autoIndent": true,
+    "emmet.includeLanguages": {
+        "vue": "html",
+        "twig": "html"
+    },
+    "files.associations": {
+        "*.inc": "php",
+        "*.module": "php",
+        "*.install": "php",
+        "*.theme": "php",
+        "*.tpl.php": "php",
+        "*.test": "php",
+        "*.php": "php"
+    },
+    "git.confirmSync": false,
+    "python.linting.enabled": false,
+    "editor.multiCursorModifier": "alt",
+    "editor.smoothScrolling": true,
+    "editor.fontLigatures": true,
+    "workbench.colorTheme": "Night Owl (No Italics)",
+    "workbench.startupEditor": "none",
+    "editor.rulers": [
+        80,
+        100
+    ],
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "breadcrumbs.enabled": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "terminal.integrated.rendererType": "canvas",
+    "phpcs.enable": true,
+    "phpcs.standard": "Drupal,DrupalPractice",
+    "php.suggest.basic": false,
+    "php.validate.enable": true,
+    "php.validate.executablePath": "/usr/local/opt/php@7.1/bin/php",
+    "php.validate.run": "onType",
+    "phpcs.executablePath": "/Users/adiaz/.composer/vendor/bin/phpcs",
+    "terminal.integrated.fontFamily": "Hack Nerd Font",
+    "terminal.integrated.lineHeight": 1.2,
+    "terminal.integrated.fontWeightBold": "600",
+    "workbench.colorCustomizations": {
+        "editor.selectionBackground": "#2e3ac2",
+        "editor.selectionHighlightBackground": "#383D63",
+        "editor.findMatchBackground": "#4F855A",
+        "editor.findMatchHighlightBackground": "#4F857E"
+    }
+}
