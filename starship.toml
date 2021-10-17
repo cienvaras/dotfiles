@@ -1,0 +1,12 @@
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[php]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+truncation_symbol = "…/"

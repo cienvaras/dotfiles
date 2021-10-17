@@ -2,13 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/adiaz/.oh-my-zsh"
+export ZSH="/Users/andres/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -64,42 +64,42 @@ CASE_SENSITIVE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-vi-mode
 )
 
 # Powerlevel9k
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv ssh dir vcs status)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_STATUS_CROSS=true
+# POWERLEVEL9K_MODE='nerdfont-complete'
+# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(virtualenv ssh dir vcs status)
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+# POWERLEVEL9K_STATUS_CROSS=true
 
 # Add a space in the first prompt
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
+# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
 # Visual customisation of the second prompt line
-local user_symbol="$"
-if [[ $(print -P "%#") =~ "#" ]]; then
-    user_symbol = "#"
-fi
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
+# local user_symbol="$"
+# if [[ $(print -P "%#") =~ "#" ]]; then
+#     user_symbol = "#"
+# fi
+# POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%{%B%F{black}%K{yellow}%} $user_symbol%{%b%f%k%F{yellow}%} %{%f%}"
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 # RVM
-export PATH="$PATH:$HOME/.rvm/bin"
+# export PATH="$PATH:$HOME/.rvm/bin"
 
 # PHP
-export PATH="/usr/local/opt/php@7.1/bin:$PATH"
-export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
 export PATH="$PATH:$HOME/.composer/vendor/bin"
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Pyenv
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
 
 # zsh-syntax-highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -110,7 +110,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -118,6 +118,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -133,3 +134,68 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Starship
+eval "$(starship init zsh)"
+
+# BEGIN SNIPPET: Platform.sh CLI configuration
+HOME=${HOME:-'/Users/andres'}
+export PATH="$HOME/"'.platformsh/bin':"$PATH"
+if [ -f "$HOME/"'.platformsh/shell-config.rc' ]; then . "$HOME/"'.platformsh/shell-config.rc'; fi # END SNIPPET
+
+# tmux
+# if [ "$TMUX" = "" ]; then tmux; fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Git - FZF integration.
+alias gfuz='git ls-files -m -o --exclude-standard | fzf --print0 -m -1 | xargs -0 -t -o'
+alias gdf='gfuz git diff'
+
+# unalias default zsh git plugin commands.
+unalias ga
+unalias gco
+unalias gb
+unalias grh
+
+gco(){
+  if [ $# -eq 0 ]; then
+    gfuz git checkout
+  else
+    git checkout "$@"
+  fi
+}
+
+ga(){
+  if [ $# -eq 0 ]; then
+    gfuz git add
+  else
+    git add "$@"
+  fi
+}
+
+# grh(){
+#   if [ $# -eq 0 ]; then
+#     git diff --name-only --cached | fzf --print0 -m -1 | xargs -0 -t -o git reset HEAD
+#   else
+#     git reset HEAD "$@"
+#   fi
+# }
+
+gb(){
+  if [ $# -eq 0 ]; then
+    git branch | fzf --print0 -m | tr -d '[:space:]*' |xargs -0 -t -o git checkout
+  else
+    git checkout "$@"
+  fi
+}
+
+# exa.
+alias ls='exa --color always --icons'
+alias ll='exa --long --color always --icons'
+alias la='exa --all --color always --icons'
+alias lla='exa --long --all --color always'
+
+#nvim.
+alias v='nvim'
