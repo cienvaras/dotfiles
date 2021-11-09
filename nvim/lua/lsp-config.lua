@@ -123,9 +123,9 @@ local function on_attach_tsserver(client)
       -- eslint
       eslint_enable_code_actions = true,
       eslint_enable_disable_comments = true,
-      eslint_bin = 'eslint_d',
+      eslint_bin = 'eslint',
       eslint_config_fallback = nil,
-      eslint_enable_diagnostics = true,
+      eslint_enable_diagnostics = false,
 
       -- formatting
       enable_formatting = true,
@@ -166,6 +166,8 @@ require'lspconfig'.tsserver.setup {
     -- }
 }
 
+require'lspconfig'.eslint.setup{}
+
 -- }}}
 
 -- {{{ Intephense config.
@@ -198,6 +200,15 @@ require'lspconfig'.cssls.setup {
 
 require'lspconfig'.pyright.setup{
   capabilities = capabilities
+}
+
+-- }}}
+
+-- {{{ Rust config.
+
+require'lspconfig'.rust_analyzer.setup{
+  on_attach = on_attach_common,
+  capabilities = capabilities,
 }
 
 -- }}}
