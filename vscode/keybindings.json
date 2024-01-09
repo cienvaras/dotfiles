@@ -1,7 +1,87 @@
-// Place your key bindings in this file to overwrite the defaults
+// Place your key bindings in this file to override the defaultsauto[]
 [
   {
-    "key": "alt+w",
-    "command": "editor.emmet.action.wrapIndividualLinesWithAbbreviation"
-  }
+    "key": "shift+cmd+0",
+    "command": "workbench.action.zoomReset"
+  },
+  {
+    "key": "cmd+numpad0",
+    "command": "-workbench.action.zoomReset"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "cursorPageUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+cmd+up",
+    "command": "scrollPageUp",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "cursorPageDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+cmd+down",
+    "command": "scrollPageDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+l cmd+o",
+    "command": "-extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+l cmd+c",
+    "command": "-extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "findThenJump.initiate"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "findThenJump.initiateWithSelection"
+  },
+  {
+    "key": "cmd+o",
+    "command": "projectManager.listGitProjects#sideBarGit"
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.toggleSidebarVisibility",
+  },
+  {
+    "key": "ctrl+e",
+    "command": "workbench.files.action.focusFilesExplorer",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "c",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus",
+  },
 ]

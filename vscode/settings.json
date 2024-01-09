@@ -1,77 +1,163 @@
 {
-    "editor.fontSize": 13,
-    "editor.fontFamily": "Victor Mono",
-    "editor.tabSize": 2,
-    "editor.cursorStyle": "line",
-    "editor.renderWhitespace": "boundary",
-    "files.insertFinalNewline": true,
-    "editor.dragAndDrop": true,
-    "editor.minimap.enabled": false,
-    "editor.autoIndent": "full",
-    "emmet.includeLanguages": {
-        "javascript": "javascriptreact",
-        "vue": "html",
-        "twig": "html"
+  "workbench.colorTheme": "Cobalt2",
+  "editor.fontFamily": "MonoLisa",
+  "editor.fontWeight": "normal",
+  "editor.renderWhitespace": "boundary",
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "prettier.requireConfig": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.fontLigatures": "'calt' on, 'liga' on, 'ss02' on, 'ss07' on, 'ss10' on, 'ss13' on",
+  "editor.guides.bracketPairs": "active",
+  "editor.rulers": [80, 100],
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.confirmSync": false,
+  "git.mergeEditor": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "terminal.integrated.fontFamily": "MonoLisa, FiraCode Nerd Font",
+  "terminal.integrated.fontSize": 12,
+  "polacode.backgroundColor": "#ffffff",
+  "polacode.shadow": "rgba(0, 0, 0, 0.55) 0px 0px 0px",
+  "polacode.target": "snippet",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.linkedEditing": true,
+  "workbench.sideBar.location": "right",
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.editor.enablePreview": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "[php]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "valeryanm.vscode-phpsab"
+  },
+  "twig-language-2.indentStyle": "space",
+  "twig-language-2.indentLevel": 2,
+  "twig-language-2.formatting": false,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "workbench.startupEditor": "none",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "files.insertFinalNewline": true,
+  "twig-language-2.newLine": false,
+  "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#ffffff20"
+  },
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 500,
+  "vim.overrideCopy": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.leader": "<space>",
+  "vim.smartRelativeLine": true,
+  "vim.foldfix": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "k"],
+      "commands": ["editor.action.showHover"]
     },
-    "files.associations": {
-        "*.inc": "php",
-        "*.module": "php",
-        "*.install": "php",
-        "*.theme": "php",
-        "*.tpl.php": "php",
-        "*.test": "php",
-        "*.php": "php"
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"],
     },
-    "git.confirmSync": false,
-    "python.linting.enabled": false,
-    "editor.multiCursorModifier": "alt",
-    "editor.smoothScrolling": true,
-    "editor.fontLigatures": true,
-    "workbench.startupEditor": "none",
-    "editor.rulers": [
-        80,
-        100
-    ],
-    "breadcrumbs.enabled": false,
-    "workbench.editor.highlightModifiedTabs": true,
-    "terminal.integrated.rendererType": "canvas",
-    "phpcs.enable": true,
-    "phpcs.standard": "Drupal,DrupalPractice",
-    "php.suggest.basic": false,
-    "php.validate.enable": true,
-    "php.validate.executablePath": "/usr/local/bin/php",
-    "php.validate.run": "onType",
-    "phpcs.executablePath": "/Users/andres/.composer/vendor/bin/phpcs",
-    "terminal.integrated.fontFamily": "Hack Nerd Font",
-    "terminal.integrated.lineHeight": 1.2,
-    "terminal.integrated.fontWeightBold": "600",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"],
     },
-    "editor.fontWeight": "600",
-    "workbench.colorTheme": "Nord",
-    "vim.hlsearch": true,
-    "vim.smartRelativeLine": true,
-    "vim.easymotion": true,
-    "vim.leader": "`",
-    "vim.sneak": true,
-    "editor.linkedEditing": true,
-    "workbench.preferredDarkColorTheme": "Nord",
-    "editor.tokenColorCustomizations": {
-        "[Nord]": {
-            "textMateRules": [
-                {
-                    "scope": "comment",
-                    "settings": {
-                        "fontStyle": "italic"
-                    }
-                }
-            ]
-        }
+    {
+      "before": ["leader", "c", "a"],
+      "commands": ["editor.action.quickFix"]
     },
-    "[javascriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["[", "b"],
+      "commands": [":bprev"],
     },
-    "window.zoomLevel": 3
+    {
+      "before": ["]", "b"],
+      "commands": [":bnext"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] },
+  ],
+  "emmet.includeLanguages": {
+    "twig": "html"
+  },
+  "editor.cursorBlinking": "smooth",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": "single",
+  "window.commandCenter": false,
+  "projectManager.git.baseFolders": ["$home/dev"],
+  "projectManager.sortList": "Recent",
+  "editor.stickyScroll.enabled": true,
+  "editor.suggest.insertMode": "replace",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.tabSize": 2,
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1,
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.NVIM_APPNAME": "nvim-vscode",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.scrollback": 10000,
+  "files.associations": {
+    "*.inc": "php",
+    "*.module": "php",
+    "*.install": "php",
+    "*.theme": "php",
+    "*.profile": "php",
+    "*.tpl.php": "php",
+    "*.test": "php",
+    "*.php": "php",
+    "*.info": "ini"
+  },
+  "files.trimTrailingWhitespace": true,
+  "intelephense.environment.includePaths": [
+    "core/",
+    "core/includes",
+    "../vendor/"
+  ],
+  "phpsab.snifferEnable": true,
+  "phpsab.standard": "Drupal,DrupalPractice",
+  "phpsab.snifferArguments": ["--extensions=inc,theme,install,module,profile,php,phtml"],
+  "phpsab.fixerArguments": ["--extensions=inc,theme,install,module,profile,php,phtml"],
+  "phpsab.fixerEnable": true,
+  "php-docblocker.gap": true,
+  "php-docblocker.useShortNames": true,
+  "php.validate.enable": true,
+  "php.validate.executablePath": "/usr/local/bin/php",
+  "php.validate.run": "onType",
+  "workbench.activityBar.location": "hidden",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.macOptionIsMeta": true,
+  "vim.useSystemClipboard": true
 }
