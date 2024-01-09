@@ -1,5 +1,21 @@
 [user]
 	email = andres.diaz.soto@gmail.com
 	name = Andrés Díaz Soto
+	signingkey = /Users/andres/.ssh/id_rsa.pub
 [help]
-	autocorrect = 1
+	autocorrect = 20
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true
+[init]
+	defaultBranch = main
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
