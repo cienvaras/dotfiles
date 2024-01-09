@@ -1,20 +1,57 @@
--- Nord theme configuration.
+-- Colorscheme settings.
+-- local colors = require("onenord.colors").load()
+--
+-- require('onenord').setup({
+--   styles = {
+--     comments = 'italic',
+--     strings = 'NONE',
+--     keywords = 'italic',
+--     functions = 'NONE',
+--     variables = 'NONE',
+--     diagnostics = 'underline',
+--   },
+--   custom_highlights = {
+--     TelescopeSelection = { fg = colors.cyan, bg = colors.active },
+--     TelescopeSelectionCaret = { fg = colors.cyan, bg = colors.active },
+--   }
+-- })
 
--- Set config variables.
--- vim.g.nord_contrast = true
--- vim.g.nord_borders = true
--- vim.g.nord_disable_background = true
+require('nightfox').setup({
+  options = {
+    styles = {
+      comments = 'italic',
+      keywords = 'italic',
+    },
+  },
+})
 
--- Load the colorscheme
--- require('nord').set()
+vim.cmd('colorscheme nightfox')
 
--- Overrides.
--- vim.cmd('hi String gui=NONE')
+-- require('tokyonight').setup({
+--   -- your configuration comes here
+--   -- or leave it empty to use the default settings
+--   style = 'night', -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+--   light_style = 'day', -- The theme is used when the background is set to light
+--   transparent = false, -- Enable this to disable setting the background color
+--   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
+--   styles = {
+--     -- Style to be applied to different syntax groups
+--     -- Value is any valid attr-list value for `:help nvim_set_hl`
+--     comments = { italic = true },
+--     keywords = { italic = true },
+--     functions = {},
+--     variables = {},
+--     -- Background styles. Can be "dark", "transparent" or "normal"
+--     sidebars = 'dark', -- style for sidebars, see below
+--     floats = 'dark', -- style for floating windows
+--   },
+--   sidebars = { 'qf', 'help' }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+--   day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+--   hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
+--   dim_inactive = false, -- dims inactive windows
+--   lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
+-- })
+--
+-- vim.cmd('colorscheme tokyonight')
 
--- Oceanic Next colorscheme.
--- vim.g.oceanic_next_terminal_bold = true
--- vim.g.oceanic_next_terminal_italic = true
--- vim.cmd('colorscheme OceanicNext')
-
--- Tokyo Night colorsheme.
-vim.cmd('colorscheme tokyonight')
+-- require('colorbuddy').colorscheme('cobalt2')
